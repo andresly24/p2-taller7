@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= Title %></title>
+    <title>Usuarios</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="my-4"><%= Title %></h1>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Perfil Descripción</th>
-                    <th>Perfil Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% usuarios.forEach(usuario => { %>
-                    <tr>
-                        <td><%= usuario.id %></td>
-                        <td><%= usuario.usuario %></td>
-                        <td><%= usuario.nombre %></td>
-                        <td><%= usuario.apellido %></td>
-                    </tr>
-                <% }); %>
-            </tbody>
-        </table>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.table').DataTable();
-        });
-    </script>
+<div class="container mt-5">
+    <h1 class="mb-4">Lista de Usuarios</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Perfil Descripción</th>
+            <th>Perfil Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% usuarios.forEach(usuario => { %>
+            <tr>
+                <td><%= usuario.id %></td>
+                <td><%= usuario.usuario %></td>
+                <td><%= usuario.nombre %></td>
+                <td><%= usuario.apellido %></td>
+                <td><%= usuario.descripcion %></td>
+                <td><%= usuario.estado %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
